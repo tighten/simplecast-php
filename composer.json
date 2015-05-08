@@ -1,0 +1,13 @@
+{
+    "name": "tightenco/simplecast-php",
+    "description": "A Simplecast PHP SDK",
+    "require": {
+        "guzzlehttp/guzzle-services": "0.5.*"
+    },
+    "authors": [
+        {
+            "name": "Matt Stauffer",
+            "email": "matt@tighten.co"
+        }
+    ]
+}
