@@ -6,15 +6,17 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
 use GuzzleHttp\Command\Guzzle\Description;
 
+$client = Simplecast\ClientFactory::factory([
+    'apiKey' => $apiKey
+]);
+
 /**
  * TODO
- * - figure out how to inject api key via config
  * - figure out how to make header auth happen outside of operations
  *    http://guzzle.readthedocs.org/en/latest/clients.html#custom-authentication-schemes?
  * - figure out how to not strip out v1 from the baseUrl
  * - figure out if there's a custom param type other than string for YYYY-MM-DD
  */
-$client = new Client();
 $description = new Description([
     'baseUrl' => 'https://api.simplecast.fm/',
     // 'endpointPrefix' => 'v1', // ??
@@ -26,10 +28,6 @@ $description = new Description([
             'uri' => '/v1/podcasts.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'default' => $apiKey
-                ]
             ]
         ],
         'podcast' => [
@@ -37,11 +35,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -53,11 +46,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}/episodes.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -69,11 +57,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}/episodes/{episode_id}.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -89,11 +72,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}/episodes/{episode_id}/embed.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -109,11 +87,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}/statistics.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -125,11 +98,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}/statistics/overall.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -154,11 +122,6 @@ $description = new Description([
             'uri' => '/v1/podcasts/{podcast_id}/statistics/episode.json',
             'responseModel' => 'getResponse',
             'parameters' => [
-                'X-API-KEY' => [
-                    'location' => 'header',
-                    'type' => 'string',
-                    'default' => $apiKey
-                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
