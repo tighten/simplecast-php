@@ -12,10 +12,7 @@ $client = Simplecast\ClientFactory::factory([
 
 /**
  * TODO
- * - figure out how to make header auth happen outside of operations
- *    http://guzzle.readthedocs.org/en/latest/clients.html#custom-authentication-schemes?
  * - figure out how to not strip out v1 from the baseUrl
- * - figure out if there's a custom param type other than string for YYYY-MM-DD
  */
 $description = new Description([
     'baseUrl' => 'https://api.simplecast.fm/',
