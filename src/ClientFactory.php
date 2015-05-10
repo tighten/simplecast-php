@@ -1,6 +1,8 @@
 <?php namespace Simplecast;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Command\Guzzle\GuzzleClient;
+use GuzzleHttp\Command\Guzzle\Description;
 
 class ClientFactory
 {
@@ -11,13 +13,28 @@ class ClientFactory
         }
 
         $client = new Client([
+            'base_url' => [
+                 'https://api.simplecast.fm/v{version}/',
+                 ['version' => '1']
+            ],
             'defaults' => [
                 'headers' => [
                     'X-API-KEY' => $config['apiKey']
                 ]
             ]
-        ]);
+        ], [], $config);
 
-        return $client;
+        $description = self::getDescriptionFromConfig($config);
+
+        return new GuzzleClient($client, $description);
+    }
+
+    private static function getDescriptionFromConfig(array $config)
+    {
+        $data = isset($config['descriptionPath']) && is_readable($config['descriptionPath'])
+            ? include($config['descriptionPath'])
+            : include(__DIR__ . '/../simplecast-api.php');
+
+        return new Description($data);
     }
 }
