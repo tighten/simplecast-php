@@ -13,10 +13,6 @@ class ClientFactory
         }
 
         $client = new Client([
-            'base_url' => [
-                 'https://api.simplecast.fm/v{version}/',
-                 ['version' => '1']
-            ],
             'defaults' => [
                 'headers' => [
                     'X-API-KEY' => $config['apiKey']
@@ -26,7 +22,14 @@ class ClientFactory
 
         $description = self::getDescriptionFromConfig($config);
 
-        return new GuzzleClient($client, $description);
+        $guzzleClient = new GuzzleClient($client, $description);
+
+        $guzzleClient->setConfig(
+            'defaults/api_version',
+            1
+        );
+
+        return $guzzleClient;
     }
 
     private static function getDescriptionFromConfig(array $config)

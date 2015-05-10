@@ -1,20 +1,30 @@
 <?php return [
-    // 'baseUrl' => 'https://api.simplecast.fm/',
+    'baseUrl' => 'https://api.simplecast.fm/',
     'name' => 'Simplecast',
     'apiVersion' => 1,
     'operations' => [
         'podcasts' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts.json',
+            'uri' => '/v{api_version}/podcasts.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
             ]
         ],
         'podcast' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -23,9 +33,14 @@
         ],
         'podcastEpisodes' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}/episodes.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}/episodes.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -34,9 +49,14 @@
         ],
         'podcastEpisode' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}/episodes/{episode_id}.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}/episodes/{episode_id}.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -49,9 +69,14 @@
         ],
         'podcastEpisodeEmbed' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}/episodes/{episode_id}/embed.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}/episodes/{episode_id}/embed.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -64,9 +89,14 @@
         ],
         'podcastStatistics' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}/statistics.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}/statistics.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -75,9 +105,14 @@
         ],
         'podcastStatisticsOverall' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}/statistics/overall.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}/statistics/overall.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
@@ -99,9 +134,14 @@
         ],
         'podcastStatisticsEpisode' => [
             'httpMethod' => 'GET',
-            'uri' => '/v1/podcasts/{podcast_id}/statistics/episode.json',
+            'uri' => '/v{api_version}/podcasts/{podcast_id}/statistics/episode.json',
             'responseModel' => 'getResponse',
             'parameters' => [
+                'api_version' => [
+                    'required' => true,
+                    'type'     => 'string',
+                    'location' => 'uri',
+                ],
                 'podcast_id' => [
                     'location' => 'uri',
                     'type' => 'string'
