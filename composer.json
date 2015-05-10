@@ -1,6 +1,8 @@
 {
     "name": "tightenco/simplecast",
+    "type": "library",
     "description": "A Simplecast PHP SDK",
+    "keywords": ["simplecast","podcast"],
     "require": {
         "guzzlehttp/guzzle-services": "0.5.*"
     },
