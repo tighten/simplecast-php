@@ -3,6 +3,7 @@
     "type": "library",
     "description": "A Simplecast PHP SDK",
     "keywords": ["simplecast","podcast"],
+    "license": "MIT",
     "require": {
         "guzzlehttp/guzzle-services": "0.5.*"
     },
