@@ -36,7 +36,7 @@ class ClientFactory
     {
         $data = isset($config['descriptionPath']) && is_readable($config['descriptionPath'])
             ? include($config['descriptionPath'])
-            : include(__DIR__ . '/../simplecast-api.php');
+            : include(__DIR__ . '/simplecast-api.php');
 
         return new Description($data);
     }
