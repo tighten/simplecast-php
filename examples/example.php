@@ -42,7 +42,7 @@ $result = $simplecast->podcasts();
 //     'end_date' => '2015-01-30'
 // ]);
 
-// $result = $simplecast->podcastStatisticsEpisode([
+// $result = $simplecast->podcastEpisodeStatistics([
 //     'podcast_id' => 335,
 //     'episode_id' => 11265,
 //     'timeframe' => 'recent'

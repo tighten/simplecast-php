@@ -132,7 +132,7 @@
                 ],
             ]
         ],
-        'podcastStatisticsEpisode' => [
+        'podcastEpisodeStatistics' => [
             'httpMethod' => 'GET',
             'uri' => '/v{api_version}/podcasts/{podcast_id}/statistics/episode.json',
             'responseModel' => 'getResponse',
