@@ -15,7 +15,7 @@ $simplecast = Simplecast\ClientFactory::factory([
 
 $result = $simplecast->podcasts();
 
-print $result;
+var_dump($result);
 ```
 
 ## Available methods
