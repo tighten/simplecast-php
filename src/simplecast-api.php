@@ -120,7 +120,6 @@
                 'timeframe' => [
                     'location' => 'query',
                     'type' => 'string', // recent, year, all, custom
-                    'required' => true
                 ],
                 'start_date' => [
                     'location' => 'query',
@@ -153,7 +152,6 @@
                 'timeframe' => [
                     'location' => 'query',
                     'type' => 'string', // recent, year, all, custom
-                    'required' => true
                 ],
                 'start_date' => [
                     'location' => 'query',

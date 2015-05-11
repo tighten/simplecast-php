@@ -31,8 +31,7 @@ $result = $simplecast->podcasts();
 // ]);
 
 // $result = $simplecast->podcastStatisticsOverall([
-//     'podcast_id' => 335,
-//     'timeframe' => 'recent'
+//     'podcast_id' => 335
 // ]);
 
 // $result = $simplecast->podcastStatisticsOverall([
@@ -45,7 +44,6 @@ $result = $simplecast->podcasts();
 // $result = $simplecast->podcastEpisodeStatistics([
 //     'podcast_id' => 335,
 //     'episode_id' => 11265,
-//     'timeframe' => 'recent'
 // ]);
 
 echo '<pre>';
